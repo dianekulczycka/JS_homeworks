@@ -21,7 +21,7 @@ for (let k = 1; k <= 5; k++) {
         randomArray[randomArray.length] = k;
     } else {
         randomArray[randomArray.length] = k % 2 === 0;
-        // інтелідж не давав пушнути поки я не замінила код нижче на тернарний
+        // інтелідж не давав пушнути поки я не замінила код нижче на тернарний вираз
         // if (k % 2 === 0) {
         //    randomArray[randomArray.length] = true;
         // } else {
