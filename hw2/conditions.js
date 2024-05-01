@@ -33,7 +33,7 @@ if (time <= 15) {
     console.log("Second quarter");
 } else if (time <= 45) {
     console.log("Third quarter");
-} else if (time > 59){
+} else if (time > 59) {
     console.log("Fourth quarter");
 }
 
@@ -94,6 +94,8 @@ if (numberOne > numberTwo) {
     console.log(numberTwo);
 } else if (numberOne === numberTwo) {
     console.log(`Numbers are even! ${numberOne}`);
+} else {
+    console.log("Not a number!");
 }
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null
