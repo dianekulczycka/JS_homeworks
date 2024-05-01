@@ -110,11 +110,8 @@ if (numberOne > numberTwo) {
 // Напишіть код який, буде присвоювати змінній х значення "default"
 //  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні,
 //  тобто ті, які приводиться до false, а це 0 null undefined і тд).
-
 let secondX;
-if (!secondX === false) {
-    secondX = "default";
-}
+secondX = secondX || "default";
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
 // За допомоги іф перевірити кожен його елемент на тривалість навчання.
