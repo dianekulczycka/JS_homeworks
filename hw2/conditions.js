@@ -1,22 +1,24 @@
 // Логічні розгалуження:
 // - Є змінна х, якій ви надаєте довільне числове значення.
 // Якщо змінна x не дорівнює нулю,
-// виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте скрипт при a, що дорівнює 1, 0, -3
-let arrayOfX = [1, 0, -3];
+// виведіть 'Вірно', інакше виведіть 'Невірно'.
+let firstX = Number(prompt("Enter a number (not necessary int):"));
+let answer = firstX !== 0;
+console.log(answer);
 
-if (arrayOfX[0] !== 0) {
+//  Перевірте скрипт при a, що дорівнює 1, 0, -3
+let arrayOfXs = [1, 0, -3];
+if (arrayOfXs[0] !== 0) {
     console.log("True");
 } else {
     console.log("False");
 }
-
-if (arrayOfX[1] !== 0) {
+if (arrayOfXs[1] !== 0) {
     console.log("True");
 } else {
     console.log("False");
 }
-
-if (arrayOfX[2] !== 0) {
+if (arrayOfXs[2] !== 0) {
     console.log("True");
 } else {
     console.log("False");
@@ -25,35 +27,40 @@ if (arrayOfX[2] !== 0) {
 //- Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код,
 // який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
-let time = 34;
+let time = Number(prompt("Enter an int between 0 and 59:"));
 
-if (time <= 15) {
+if (time <= 14) {
     console.log("First quarter");
-} else if (time <= 30) {
+} else if (time <= 29) {
     console.log("Second quarter");
-} else if (time <= 45) {
+} else if (time <= 44) {
     console.log("Third quarter");
-} else if (time > 59) {
+} else if (time > 45) {
     console.log("Fourth quarter");
+} else {
+    console.log("Not a number!");
 }
 
 // - У змінній day дано якесь число від 1 до 31.
 // Потрібно визначити, у яку половину(декаду) місяця потрапляє це число
 // (у першу, другу чи третю).
-let day = 15;
+let day = Number(prompt("Enter an int between 1 and 31:"));
 
-if (day <= 10) {
+if (day > 0 && day <= 10) {
     console.log("First decade");
-} else if (day <= 20) {
+} else if (day > 10 && day <= 20) {
     console.log("Second decade");
-} else if (day > 20) {
+} else if (day > 20 && day <= 31) {
     console.log("Third decade");
+} else {
+    console.log("Not a number!");
 }
+
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить
 // порядковий номер дня тижня і на екрані відображається інфа що заплановано
 // на цей день (можна замість плану на день, назву дня англійською).
-let dayOfWeek = Number(prompt("Enter day of week (number from 1 to 7): "));
+let dayOfWeek = Number(prompt("Enter day of week (int from 1 to 7): "));
 
 switch (dayOfWeek) {
     case 1:
@@ -104,9 +111,9 @@ if (numberOne > numberTwo) {
 //  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні,
 //  тобто ті, які приводиться до false, а це 0 null undefined і тд).
 
-let x;
-if (!x === false) {
-    x = "default";
+let secondX;
+if (!secondX === false) {
+    secondX = "default";
 }
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
