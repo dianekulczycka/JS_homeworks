@@ -93,7 +93,7 @@ if (numberOne > numberTwo) {
 } else if (numberOne < numberTwo) {
     console.log(numberTwo);
 } else if (numberOne === numberTwo) {
-    console.log("Numbers are even");
+    console.log(`Numbers are even! ${numberOne}`);
 }
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null
