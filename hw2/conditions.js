@@ -29,13 +29,13 @@ if (arrayOfXs[2] !== 0) {
 // (в першу, другу, третю или четверту частину години).
 let time = Number(prompt("Enter an int between 0 and 59:"));
 
-if (time <= 14) {
+if (time > 0 && time <= 14) {
     console.log("First quarter");
-} else if (time <= 29) {
+} else if (time > 14 && time <= 29) {
     console.log("Second quarter");
-} else if (time <= 44) {
+} else if (time > 29 && time <= 44) {
     console.log("Third quarter");
-} else if (time > 45) {
+} else if (time > 45 && time <= 59) {
     console.log("Fourth quarter");
 } else {
     console.log("Not a number!");
