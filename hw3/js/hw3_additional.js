@@ -19,7 +19,7 @@ for (let k = 1; k <= 5; k++) {
         randomArray[randomArray.length] = `i am a string ${k}`;
     } else if (random >= 3 && random <= 6) {
         randomArray[randomArray.length] = k;
-    } else if (random > 6 && random <= 9){
+    } else if (random > 6 && random <= 9) {
         randomArray[randomArray.length] = random % 2 === 0;
     }
 }

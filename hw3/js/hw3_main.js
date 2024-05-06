@@ -95,6 +95,8 @@ for (let i = 0; i < users.length; i++) {
     }
 }
 
+// debugger
+
 //  - користувачів зі статусом false
 document.write("<h5>Users with \"/false/\" status:</h5>");
 for (let i = 0; i < users.length; i++) {

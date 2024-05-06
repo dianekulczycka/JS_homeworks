@@ -1,7 +1,7 @@
 let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 console.log(arr);
 
-console.log("Перебрати масив циклом while:")
+console.log("Перебрати масив циклом while:");
 let n = 0;
 while (n < arr.length) {
     console.log(arr[n]);
