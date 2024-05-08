@@ -6,7 +6,7 @@ function square(a, b) {
     return NaN;
 }
 
-square(2, 5);
+console.log(square(2, 5));
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function circleSquare(r) {
@@ -16,17 +16,17 @@ function circleSquare(r) {
     return NaN;
 }
 
-circleSquare(5);
+console.log(circleSquare(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function cylinderVolume(r, h) {
     if (r > 0 && h > 0) {
-        return r ** 2 * Math.PI * h; //сорі, але в циліндра шукається об'єм) площа в переріза або в основи
+        return r ** 2 * Math.PI * h; //сорі шо душню, але в циліндра шукається об'єм) площа в переріза або в основи
     }
     return NaN;
 }
 
-cylinderVolume(2, 3);
+console.log(cylinderVolume(2, 3));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 function looper(array) {
