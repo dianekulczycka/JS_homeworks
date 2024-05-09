@@ -38,16 +38,16 @@ function looper(array) {
 looper([1, 2, true, undefined, "hello", ""]);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function paragraphCreator(innerText) {
+function paragraphFactory(innerText) {
     if (innerText) {
         document.write(`<p>${innerText}</p>`);
     }
 }
 
-paragraphCreator('Hello');
+paragraphFactory('Hello');
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function ulCreator(innerText) {
+function ulFactory(innerText) {
     if (innerText) {
         document.write("<ul>");
         for (let i = 0; i < 3; i++) {
@@ -57,10 +57,10 @@ function ulCreator(innerText) {
     }
 }
 
-ulCreator("List n1");
+ulFactory("List n1");
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-function ulCreatorTwo(innerText, liCount) {
+function ulFactoryUpd(innerText, liCount) {
     if (liCount > 0) {
         document.write("<ul>");
         for (let i = 1; i <= liCount; i++) {
@@ -70,10 +70,10 @@ function ulCreatorTwo(innerText, liCount) {
     }
 }
 
-ulCreatorTwo("List n2", 5);
+ulFactoryUpd("List n2", 5);
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-function ulCreatorForArrays(liArray) {
+function ulFactoryForArrays(liArray) {
     if (liArray.length > 0) {
         document.write("<ul>");
         for (let i = 0; i < liArray.length; i++) {
@@ -83,11 +83,11 @@ function ulCreatorForArrays(liArray) {
     }
 }
 
-ulCreatorForArrays([1, 2, 3, 4, true, false, "hello", "mynameis"]);
+ulFactoryForArrays([1, 2, 3, 4, true, false, "hello", "mynameis"]);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age ,
 // та виводить їх в документ. Для кожного об'єкту окремий блок.
-function divCreatorForObjects(users) {
+function divFactoryForObjects(users) {
     for (const user of users) {
         document.write("<div style='border:1px solid black'>");
         for (const key in user) {
@@ -97,7 +97,7 @@ function divCreatorForObjects(users) {
     }
 }
 
-divCreatorForObjects([
+divFactoryForObjects([
     {
         id: 1,
         name: "elena",
