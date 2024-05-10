@@ -1,27 +1,27 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-function square(a, b) {
+const areaCalc = (a, b) => {
     if (a > 0 && b > 0) {
         return a * b;
     }
     return NaN;
 }
 
-console.log(square(2, 5));
+console.log(areaCalc(2, 5));
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-function circleSquare(r) {
+const circleArea = r => {
     if (r > 0) {
         return r ** 2 * Math.PI;
     }
     return NaN;
 }
 
-console.log(circleSquare(5));
+console.log(circleArea(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function cylinderVolume(r, h) {
+const cylinderVolume = (r, h) => {
     if (r > 0 && h > 0) {
-        return r ** 2 * Math.PI * h; //сорі шо душню, але в циліндра шукається об'єм) площа в переріза або в основи
+        return r ** 2 * Math.PI * h;
     }
     return NaN;
 }
@@ -29,7 +29,7 @@ function cylinderVolume(r, h) {
 console.log(cylinderVolume(2, 3));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
-function looper(array) {
+const looper = array => {
     for (const item of array) {
         console.log(item);
     }
@@ -38,16 +38,16 @@ function looper(array) {
 looper([1, 2, true, undefined, "hello", ""]);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function paragraphFactory(innerText) {
+const paragraphFactory = innerText => {
     if (innerText) {
         document.write(`<p>${innerText}</p>`);
     }
 }
 
-paragraphFactory('Hello');
+paragraphFactory('Hello there');
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function ulFactory(innerText) {
+const ulFactory = innerText => {
     if (innerText) {
         document.write("<ul>");
         for (let i = 0; i < 3; i++) {
@@ -57,10 +57,10 @@ function ulFactory(innerText) {
     }
 }
 
-ulFactory("List n1");
+ulFactory("List with three li's");
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-function ulFactoryUpd(innerText, liCount) {
+const ulFactoryUpd = (innerText, liCount) => {
     if (liCount > 0) {
         document.write("<ul>");
         for (let i = 1; i <= liCount; i++) {
@@ -70,10 +70,10 @@ function ulFactoryUpd(innerText, liCount) {
     }
 }
 
-ulFactoryUpd("List n2", 5);
+ulFactoryUpd("List with five li's", 5);
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-function ulFactoryForArrays(liArray) {
+const ulArrayFactory = liArray => {
     if (liArray.length > 0) {
         document.write("<ul>");
         for (let i = 0; i < liArray.length; i++) {
@@ -83,11 +83,11 @@ function ulFactoryForArrays(liArray) {
     }
 }
 
-ulFactoryForArrays([1, 2, 3, 4, true, false, "hello", "mynameis"]);
+ulArrayFactory([1, 2, 3, 4, true, false, "hello"]);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age ,
 // та виводить їх в документ. Для кожного об'єкту окремий блок.
-function divFactoryForObjects(users) {
+const userFactory = users => {
     for (const user of users) {
         document.write("<div style='border: 1px solid black'>");
         for (const key in user) {
@@ -97,7 +97,7 @@ function divFactoryForObjects(users) {
     }
 }
 
-divFactoryForObjects([
+userFactory([
     {
         id: 1,
         name: "elena",
@@ -116,7 +116,7 @@ divFactoryForObjects([
 ]);
 
 // - створити функцію яка повертає найменьше число з масиву
-function min(nums) {
+const min = nums => {
     let minNumber = nums[0];
     for (const num of nums) {
         if (num < minNumber) {
@@ -126,11 +126,11 @@ function min(nums) {
     return minNumber;
 }
 
-console.log(min([1, 2, 3, 4, 5, 6, -99, 7, 8, 9, 10000, -5]));
+console.log(min([1, 2, 3, 4, 5, 6, -99, 7, 8, 9, -10000, -5]));
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
 // Приклад sum([1,2,10]) //->13
-function sum(nums) {
+const sum = nums => {
     let sum = 0;
     for (const num of nums) {
         sum += +num;
@@ -138,11 +138,11 @@ function sum(nums) {
     return sum;
 }
 
-console.log(sum([1, 2, 3, 4, 5]));
+console.log(sum([1, 2, 3, 4]));
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-function swap(arr, index1, index2) {
+const swap = (arr, index1, index2) => {
     if (index1 >= 0 && index1 < arr.length - 1 && index2 >= 0 && index2 < arr.length && index1 !== index2) {
         let temp = arr[index1];
         arr[index1] = arr[index2];
@@ -152,7 +152,7 @@ function swap(arr, index1, index2) {
     return NaN;
 }
 
-function swapUpd(arr, index1, index2) {
+const swapUpd = (arr, index1, index2) => {
     if (index1 >= 0 && index1 < arr.length - 1 && index2 >= 0 && index2 < arr.length && index1 !== index2) {
         arr[index1] = arr[index1] + arr[index2];
         arr[index2] = arr[index1] - arr[index2];
@@ -162,12 +162,12 @@ function swapUpd(arr, index1, index2) {
     return NaN;
 }
 
-console.log(swap([11, 22, 33, 44], 0, 1));
-console.log(swapUpd([11, 22, 33, 44], 0, 3));
+console.log(swap([11, 22, 33, 44, 55], 0, 1));
+console.log(swapUpd([11, 22, 33, 44, 55], 0, 3));
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-function exchange(sumUAH, currencyValues, exchangeCurrency) {
+const exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     for (const currency in currencyValues) {
         if (currencyValues[currency].currency === exchangeCurrency) {
             return sumUAH / currencyValues[currency].value;
@@ -175,4 +175,4 @@ function exchange(sumUAH, currencyValues, exchangeCurrency) {
     }
 }
 
-console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
+console.log(exchange(100000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
