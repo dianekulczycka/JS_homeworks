@@ -84,13 +84,14 @@ console.log(coursesAndDurationArray.map((course, index) => ({
 const koloda = [];
 const cardSuits = ['spade', 'diamond', 'heart', 'clubs'];
 const values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+const colors = ['red','black'];
 for (const cardSuit of cardSuits) {
     for (const value of values) {
-        if (cardSuit === 'spade' || cardSuit === 'clubs') {
-            const color = 'black';
+        if (cardSuit === 'diamond' || cardSuit === 'heart') {
+            const color = colors[0];
             koloda.push({cardSuit, value, color});
         } else {
-            const color = 'red';
+            const color = colors[1];
             koloda.push({cardSuit, value, color});
         }
     }
