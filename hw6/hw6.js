@@ -179,7 +179,7 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
-const coursesArrayContainingSass = coursesArray.filter(course => course['modules'].includes('sass'));
+const coursesArrayContainingSass = coursesArray.filter(course => course.modules.includes('sass'));
 console.log(coursesArrayContainingSass);
-const coursesArrayContainingDocker = coursesArray.filter(course => course['modules'].includes('docker'));
+const coursesArrayContainingDocker = coursesArray.filter(course => course.modules.includes('docker'));
 console.log(coursesArrayContainingDocker);
