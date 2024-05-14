@@ -106,7 +106,7 @@ console.log(koloda.filter(card => card.color === 'red'));
 //  - всі буби
 console.log(koloda.filter(card => card.cardSuit === 'diamond'));
 //  - всі трефи від 9 та більше
-console.log(koloda.filter(card => card.cardSuit === 'clubs' && (card.value === '10' || card.value === 'jack' || card.value === 'queen' || card.value === 'king' || card.value === 'ace')));
+console.log(koloda.filter(card => card.cardSuit === 'clubs' && (card.value === '9' || card.value === '10' || card.value === 'jack' || card.value === 'queen' || card.value === 'king' || card.value === 'ace')));
 
 // взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
 // --написати пошук всіх об'єктів, в який в modules є sass
@@ -180,7 +180,5 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
-const coursesArrayContainingSass = coursesArray.filter(course => course.modules.includes('sass'));
-console.log(coursesArrayContainingSass);
-const coursesArrayContainingDocker = coursesArray.filter(course => course.modules.includes('docker'));
-console.log(coursesArrayContainingDocker);
+console.log(coursesArray.filter(course => course.modules.includes('sass')));
+console.log(coursesArray.filter(course => course.modules.includes('docker')));
