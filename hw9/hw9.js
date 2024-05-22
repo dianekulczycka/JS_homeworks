@@ -208,6 +208,7 @@ let coursesAndModulesArray = [
 let thirdWrap = document.createElement("div");
 thirdWrap.style.border = "2px red solid";
 thirdWrap.style.padding = "0.5em";
+
 for (const course of coursesAndModulesArray) {
     let divItem = document.createElement("div");
     divItem.style.border = "1px black solid";
@@ -216,21 +217,24 @@ for (const course of coursesAndModulesArray) {
     let title = document.createElement("h1");
     let monthDuration = document.createElement("h2");
     let hoursDuration = document.createElement("h3");
-    let modulesWrap = document.createElement('div');
-    title.innerText = `title: ${course.title}`;
+    let modulesSubtitle = document.createElement("h4");
+    let modulesWrapper = document.createElement('div');
+    title.innerText = `course: ${course.title}`;
     monthDuration.innerText = `month duration: ${course.monthDuration} month(s)`;
     hoursDuration.innerText = `hours: ${course.hourDuration} hours`;
     divItem.appendChild(title);
     divItem.appendChild(monthDuration);
     divItem.appendChild(hoursDuration);
-
-    for (const module of course.modules) {
+    modulesSubtitle.innerText = "modules: ";
+    divItem.appendChild(modulesSubtitle);
+    for (const moduleItem of course.modules) {
         let p = document.createElement('p');
-        p.innerText = module;
-        modulesWrap.appendChild(p);
+        p.innerText = moduleItem;
+        modulesWrapper.appendChild(p);
     }
-    divItem.appendChild(modulesWrap);
+    divItem.appendChild(modulesWrapper);
     thirdWrap.appendChild(divItem);
 }
 document.body.appendChild(thirdWrap);
+
 
