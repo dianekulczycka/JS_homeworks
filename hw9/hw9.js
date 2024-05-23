@@ -218,7 +218,9 @@ for (const course of coursesAndModulesArray) {
     let monthDuration = document.createElement("h2");
     let hoursDuration = document.createElement("h3");
     let modulesSubtitle = document.createElement("h4");
-    let modulesWrapper = document.createElement('div');
+    let modulesWrapper = document.createElement('ul');
+    modulesWrapper.style.listStyle = "none";
+    modulesWrapper.style.padding = "0";
     title.innerText = `course: ${course.title}`;
     monthDuration.innerText = `month duration: ${course.monthDuration} month(s)`;
     hoursDuration.innerText = `hours: ${course.hourDuration} hours`;
@@ -228,9 +230,9 @@ for (const course of coursesAndModulesArray) {
     modulesSubtitle.innerText = "modules: ";
     divItem.appendChild(modulesSubtitle);
     for (const moduleItem of course.modules) {
-        let p = document.createElement('p');
-        p.innerText = moduleItem;
-        modulesWrapper.appendChild(p);
+        let li = document.createElement('li');
+        li.innerText = moduleItem;
+        modulesWrapper.appendChild(li);
     }
     divItem.appendChild(modulesWrapper);
     thirdWrap.appendChild(divItem);
