@@ -4,7 +4,8 @@
 // блок з вашим об'єктом
 // ==========================
 
-const showFullName = () => {
+const showFullName = (e) => {
+    e.preventDefault();
     let wrap = document.createElement("div");
     localStorage.setItem("fullName", JSON.stringify({
         name: document.getElementById("firstname").value,
@@ -102,7 +103,6 @@ for (let i = 1; i <= 100; i++) {
 let currentPage = 1;
 let step = 10;
 let starterArr = elements.slice(currentPage - 1, currentPage + step - 1);
-console.log(starterArr);
 let elsContainer = document.createElement("div");
 for (const el in starterArr) {
     let elContainer = document.createElement("h2");
