@@ -99,11 +99,16 @@ for (let i = 1; i <= 100; i++) {
     elements.push(i);
 }
 
-let elsContainer = document.createElement("div");
-
 let currentPage = 1;
 let step = 10;
-
+let starterArr = elements.slice(currentPage - 1, currentPage + step - 1);
+console.log(starterArr);
+let elsContainer = document.createElement("div");
+for (const el in starterArr) {
+    let elContainer = document.createElement("h2");
+    elContainer.innerText = starterArr[el];
+    elsContainer.appendChild(elContainer);
+}
 const showPreviousElements = () => {
     if (currentPage >= 1) {
         currentPage--;
@@ -118,7 +123,7 @@ const showPreviousElements = () => {
 }
 
 const showNextElements = () => {
-    if (currentPage < 10) {
+    if (currentPage < 9) {
         currentPage++;
         elsContainer.innerHTML = '';
         let showArr = elements.slice(currentPage * step, currentPage * step + step);
