@@ -123,7 +123,7 @@ const showPreviousElements = () => {
 }
 
 const showNextElements = () => {
-    if (currentPage < 9) {
+    if (currentPage < (elements.length) / step - 1) {
         currentPage++;
         elsContainer.innerHTML = '';
         let showArr = elements.slice(currentPage * step, currentPage * step + step);
