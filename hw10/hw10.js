@@ -13,6 +13,8 @@ const showFullName = (e) => {
     }));
     wrap.innerText = `${document.getElementById("firstname").value} ${document.getElementById("secondname").value}`;
     document.body.appendChild(wrap);
+    document.getElementById('firstname').value='';
+    document.getElementById('secondname').value='';
 }
 document.getElementById("submit").addEventListener("click", showFullName);
 
