@@ -8,7 +8,10 @@ const createHTMLEl = (type, value, attributeKey, attributeValue) => {
     }
     return element;
 }
-const iterator = (array, type, parent) => {
+const HTMLiterator = (array, type, parent, headerType, headerValue) => {
+    if (headerType && headerValue) {
+        parent.appendChild(createHTMLEl(headerType, headerValue));
+    }
     for (const el in array) {
         parent.appendChild(createHTMLEl(type, array[el]));
     }
@@ -17,9 +20,7 @@ fetch("https://dummyjson.com/recipes?limit=0")
     .then(response => response.json())
     .then(({recipes}) => {
         for (const recipe in recipes) {
-            //
-            // main fields
-            //
+            // ========================================== main fields
             let recipeHeader = createHTMLEl('h1', `${recipes[recipe].id}. ${recipes[recipe].name}`)
             let rating = createHTMLEl('h2', `Rating: ${recipes[recipe].rating} based on ${recipes[recipe].reviewCount} reviews`);
             let mainInfo = createHTMLEl("h3", `Cuisine: ${recipes[recipe].cuisine}
@@ -32,28 +33,13 @@ fetch("https://dummyjson.com/recipes?limit=0")
             Servings:  ${recipes[recipe].servings}
             `);
             let image = createHTMLEl("img", "", "src", recipes[recipe].image);
-            //
-            // appending to doc
-            //
+            // ============================ appending to doc
             document.getElementById("recipes").append(image, recipeHeader, rating, mainInfo, desc);
-            //
-            // instructions arr iteration
-            //
-            document.getElementById("recipes").appendChild(createHTMLEl("h3", "Instructions:"));
-            iterator(recipes[recipe].instructions, "li", document.getElementById("recipes"));
-            //
-            // ingredients arr iteration
-            //
-            let ingredientsContainerHeader = createHTMLEl("h3", "Ingredients:");
-            document.getElementById("recipes").appendChild(ingredientsContainerHeader);
-            iterator(recipes[recipe].ingredients, "li", document.getElementById("recipes"));
-            //
-            // tags arr iteration
-            //
-            document.getElementById("recipes").appendChild(createHTMLEl("h3", "Tags:"));
-            iterator(recipes[recipe].tags, "li", document.getElementById("recipes"));
+            // =============================== iterations
+            HTMLiterator(recipes[recipe].instructions, "li", document.getElementById("recipes"), "h3", "Instructions:");
+            HTMLiterator(recipes[recipe].ingredients, "li", document.getElementById("recipes"), "h3", "Ingredients:");
+            HTMLiterator(recipes[recipe].tags, "li", document.getElementById("recipes"), "h3", "Tags:");
         }
-
     });
 
 
