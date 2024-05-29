@@ -1,7 +1,5 @@
 // - взяти https://dummyjson.com/docs/recipes т
 // а вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
-
-let baseURL = 'https://dummyjson.com/recipes';
 const createHTMLEl = (type, value, attributeKey, attributeValue) => {
     let element = document.createElement(`${type}`);
     element.innerText = value;
@@ -15,7 +13,7 @@ const iterator = (array, type, parent) => {
         parent.appendChild(createHTMLEl(type, array[el]));
     }
 }
-fetch(baseURL)
+fetch("https://dummyjson.com/recipes?limit=0")
     .then(response => response.json())
     .then(({recipes}) => {
         for (const recipe in recipes) {
@@ -54,7 +52,6 @@ fetch(baseURL)
             //
             document.getElementById("recipes").appendChild(createHTMLEl("h3", "Tags:"));
             iterator(recipes[recipe].tags, "li", document.getElementById("recipes"));
-
         }
 
     });
