@@ -30,7 +30,7 @@ fetch(baseURL + "/" + userId)
         const userName = HTMLElementCreator("h1", `"${user["username"]}"`);
         const email = HTMLElementCreator("a", `${user["email"]}`, "href", `mailto:${user["email"]}`);
         const phone = HTMLElementCreator("h2", `${user["phone"]}`);
-        const website = HTMLElementCreator("a", `${user["website"]}`, "href", `${user["website"]}`);
+        const website = HTMLElementCreator("a", `${user["website"]}`, "href", `http://${user["website"]}`);
 
         document.getElementById("userInfo").append(userId, fullName, userName, email, phone, website);
 
