@@ -1,0 +1,72 @@
+/**/
+/* ======================================= BLOCKS ================================ */
+/**/
+
+#main {
+    display: grid;
+    gap: .5em;
+    grid-template-columns: 1fr 1fr;
+}
+
+.userBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    margin: 1em;
+    padding: 1em;
+    border: 2px olivedrab solid;
+    box-shadow: 0 10px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+/**/
+/* ======================================= ELEMENTS ================================ */
+/**/
+
+.userBlock > h1 {
+    color: #4b4b4b;
+}
+
+.userBlock > h1:nth-child(2) {
+    font-weight: bold;
+}
+
+.userBlock > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 0.5em 1em;
+    border: 2px #678f25 solid;
+    border-radius: 7px;
+    text-decoration: none;
+    background: olivedrab;
+    color: white;
+    box-shadow: 0 5px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+/**/
+/* ======================================= HOVERS ================================ */
+/**/
+
+.userBlock:hover {
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+    background: #c9c9c9;
+}
+
+.userBlock:hover h1 {
+    transition: 300ms ease-in-out;
+    color: black;
+}
+
+.userBlock:hover a {
+    transition: 300ms ease-in-out;
+    background: #86b42b;
+}
+
+.userBlock > a:hover {
+    transition: 300ms ease-in-out;
+    background: #9cd232;
+}

@@ -1,0 +1,88 @@
+/**/
+/* ======================================= BLOCKS ================================ */
+/**/
+
+.userBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postsBlock {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.userBlock, .postsBlock {
+    margin: 1em 1em 2em 1em;
+    padding: 1em;
+    border: 2px olivedrab solid;
+    box-shadow: 0 10px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+/**/
+/* ======================================= ELEMENTS ================================ */
+/**/
+
+.userBlock > h1 {
+    font-weight: bold;
+}
+
+.userBlock > h2 {
+    font-weight: bold;
+}
+
+.userBlock > a, .postsBlock > a {
+    text-decoration: none;
+    color: olivedrab;
+    font-size: 1.5em;
+}
+
+.postsBlock > a {
+    border: 1px solid olivedrab;
+    padding: 1em;
+}
+
+.userBlock > ul {
+    list-style: none;
+}
+
+.userBlock > ul > li {
+    font-size: 1em;
+}
+
+.userBlock > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 0.5em 1em;
+    border: 2px #678f25 solid;
+    border-radius: 7px;
+    text-decoration: none;
+    background: olivedrab;
+    color: white;
+    font-size: 1em;
+    width: 90%;
+    box-shadow: 0 5px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+.postsBlock a {
+    display: block;
+}
+
+/**/
+/* ======================================= HOVERS ================================ */
+/**/
+
+.userBlock > a:hover, .postsBlock > a:hover {
+    transition: 300ms ease-in-out;
+    color: #86b42b;
+}
+
+.userBlock > button:hover {
+    transition: 300ms ease-in-out;
+    background: #86b42b;
+}
+

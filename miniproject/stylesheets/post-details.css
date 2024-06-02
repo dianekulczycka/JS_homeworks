@@ -1,0 +1,58 @@
+/**/
+/* ======================================= BLOCKS ================================ */
+/**/
+
+.postBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentsBlock {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.postBlock, .commentsBlock {
+    margin: 1em 1em 2em 1em;
+    padding: 1em;
+    border: 2px olivedrab solid;
+    box-shadow: 0 10px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+.commentBlock {
+    padding: 1em;
+    border: 2px olivedrab solid;
+    box-shadow: 0 10px 5px 0 rgba(49, 122, 0, 0.5);
+}
+
+/**/
+/* ======================================= ELEMENTS ================================ */
+/**/
+
+.postBlock > h2:last-child, .commentBodyBlock > h4 {
+    padding: 0.5em 0.5em 0.5em 0;
+}
+
+.postBlock > h2, .commentBodyBlock > h4 {
+    color: #4b4b4b;
+}
+
+.postBlock > h2:last-child, .commentBlock > h4 {
+    color: olivedrab;
+}
+
+.commentBodyBlock > h4 {
+    font-size: 1.5em;
+}
+
+.postBlock > h2:nth-child(3), .postBlock > h2:last-child {
+    font-weight: bold;
+}
+
+.postBlock > h2:last-child {
+    text-align: center;
+    font-size: 2em;
+}
+
